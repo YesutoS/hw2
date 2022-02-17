@@ -1,11 +1,11 @@
 class Role < ApplicationRecord
 
     def people
-        Person.where({ person_id: read_attribute(:id)})
+        Person.where({ id: read_attribute(:person_id)})[0]
     end
 
     def movies
-        Movie.where({ movie_id: read_attribute(:id)})
+        Movie.where({ id: read_attribute(:movie_id)})[0]
     end
 
 end
